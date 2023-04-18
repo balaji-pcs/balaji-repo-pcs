@@ -1,5 +1,9 @@
 .App {
-  text-align: center;
+  /* text-align: center; */
+  display: flex;
+}
+.AppBar{
+  min-width: 87%;
 }
 
 .App-logo {
@@ -36,3 +40,15 @@
     transform: rotate(360deg);
   }
 }
+
+.MuiToolbar-root{
+  display: flex;
+  justify-content: space-between;
+}
+
+.bodyDiv{
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
