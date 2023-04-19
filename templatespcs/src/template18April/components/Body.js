@@ -5,11 +5,14 @@ import {
   Card,
   CardContent,
   Chip,
+  Divider,
+  LinearProgress,
   Paper,
   Table,
   TableBody,
   TableCell,
   TableContainer,
+  TableFooter,
   TableHead,
   TableRow,
   Typography,
@@ -20,10 +23,16 @@ import PeopleAltIcon from "@mui/icons-material/PeopleAlt";
 import InsertChartOutlinedIcon from "@mui/icons-material/InsertChartOutlined";
 import MoneyIcon from "@mui/icons-material/Money";
 import AttachMoneyOutlinedIcon from "@mui/icons-material/AttachMoneyOutlined";
-
+import ArrowRightIcon from "@mui/icons-material/ArrowRight";
+import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
+import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
 import { products, orders } from "../DATA/orderAndProducts";
-
+import { amberColor, redColor, tealColor } from "../customColors/ThemeAndColor";
+import { blue, purple } from "@mui/material/colors";
 export default function Body() {
+  const [value1, setValue1] = React.useState(12);
+  const [value2, setValue2] = React.useState(16);
+
   return (
     <Box
       sx={{
@@ -48,9 +57,15 @@ export default function Body() {
             <Typography variant="h5" sx={{ fontWeight: "300" }}>
               $24k
             </Typography>
-            <Typography variant="caption">BUDGET</Typography>
+            <Typography variant="caption">
+              <span style={{ color: `${value1 < 50 ? "red" : "green"}` }}>
+                <ArrowDownwardIcon fontSize="small" />
+                {value1}
+              </span>{" "}
+              Since last month
+            </Typography>
           </CardContent>
-          <Avatar sx={{ bgcolor: "#cf4242" }}>
+          <Avatar sx={{ bgcolor: redColor }}>
             <MoneyIcon />
           </Avatar>
         </Card>
@@ -68,9 +83,15 @@ export default function Body() {
             <Typography variant="h5" sx={{ fontWeight: "300" }}>
               1,6K
             </Typography>
-            <Typography variant="caption">BUDGET</Typography>
+            <Typography variant="caption">
+              <span style={{ color: `${value2 < 15 ? "red" : "green"}` }}>
+                <ArrowUpwardIcon fontSize="small" />
+                {value2}
+              </span>{" "}
+              Since last month
+            </Typography>
           </CardContent>
-          <Avatar sx={{ bgcolor: "#3db5a3" }}>
+          <Avatar sx={{ bgcolor: tealColor }}>
             <PeopleAltIcon />
           </Avatar>
         </Card>
@@ -88,9 +109,9 @@ export default function Body() {
             <Typography variant="h5" sx={{ fontWeight: "300" }}>
               75.5%
             </Typography>
-            <Typography variant="caption">BUDGET</Typography>
+            <LinearProgress value={70} variant="determinate" />
           </CardContent>
-          <Avatar sx={{ bgcolor: "#f8b021" }}>
+          <Avatar sx={{ bgcolor: amberColor }}>
             <InsertChartOutlinedIcon />
           </Avatar>
         </Card>
@@ -139,7 +160,7 @@ function Productdata() {
           <TableHead>
             {products?.map((item, index) => {
               return (
-                <TableRow>
+                <TableRow key={index}>
                   <TableCell align="left">{item.icon}</TableCell>
                   <TableCell align="left">
                     <Typography sx={{ padding: 0 }}>{item.lable}</Typography>
@@ -154,6 +175,16 @@ function Productdata() {
               );
             })}
           </TableHead>
+          <TableRow>
+            <TableCell></TableCell>
+            <TableCell
+              align="right"
+              sx={{ display: "flex", flexDirection: "row" }}
+            >
+              <Typography color={blue[600]}>View all</Typography>
+              <ArrowRightIcon color={blue[800]} />
+            </TableCell>
+          </TableRow>
         </Table>
       </TableContainer>
     </Box>
@@ -207,19 +238,33 @@ function Ordersdata() {
                   <TableCell align="LEFT">
                     <Chip
                       label={item.status}
-                      color={
-                        item.status === "DELEVERED"
-                          ? "success"
-                          : item.status === "PENDING"
-                          ? "warning"
-                          : "error"
-                      }
+                      size="small"
+                      sx={{
+                        bgcolor:
+                          item.status === "DELEVERED"
+                            ? redColor
+                            : item.status === "PENDING"
+                            ? tealColor
+                            : amberColor,
+                        color: "#fff",
+                      }}
                     />
                   </TableCell>
                 </TableRow>
               );
             })}
           </TableBody>
+          <TableFooter>
+            <TableRow>
+              <TableCell
+                align="right"
+                sx={{ display: "flex", flexDirection: "row" }}
+              >
+                <Typography color={blue[600]}>View all</Typography>
+                <ArrowRightIcon color={blue[800]} />
+              </TableCell>
+            </TableRow>
+          </TableFooter>
         </Table>
       </TableContainer>
     </Box>

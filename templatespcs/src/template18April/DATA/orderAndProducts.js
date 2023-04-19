@@ -32,29 +32,39 @@ export const products = [
   },
 ];
 export const orders = [
-  { orderRef: "CDD1049", customer: "", date: "12/04/2019", status: "PENDING" },
+  {
+    orderRef: "CDD1049",
+    customer: "Eketarina Tankova",
+    date: "12/04/2019",
+    status: "PENDING",
+  },
   {
     orderRef: "CDD1048",
-    customer: "B",
+    customer: "Cao Yu",
     date: "12/04/2019",
     status: "DELEVERED",
   },
   {
     orderRef: "CDD1047",
-    customer: "C",
+    customer: "Alexa Richardson",
     date: "11/04/2019",
     status: "REFUNDED",
   },
-  { orderRef: "CDD1046", customer: "D", date: "09/04/2019", status: "PENDING" },
+  {
+    orderRef: "CDD1046",
+    customer: "Anje Keizer",
+    date: "09/04/2019",
+    status: "PENDING",
+  },
   {
     orderRef: "CDD1045",
-    customer: "E",
+    customer: "Clarke Gillebert",
     date: "08/04/2019",
     status: "DELEVERED",
   },
   {
     orderRef: "CDD1044",
-    customer: "F",
+    customer: "Adam Denisov",
     date: "08/04/2019",
     status: "DELEVERED",
   },

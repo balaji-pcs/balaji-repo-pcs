@@ -1,6 +1,7 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
 import {
+  Button,
   Card,
   CardContent,
   Divider,
@@ -9,9 +10,7 @@ import {
   ListItemButton,
   ListItemIcon,
   ListItemText,
-  Paper,
   Typography,
-  makeStyles,
 } from "@mui/material";
 import img from "../images/stack.png";
 import UnfoldMoreIcon from "@mui/icons-material/UnfoldMore";
@@ -24,6 +23,10 @@ import LockIcon from "@mui/icons-material/Lock";
 import PersonAddAlt1Icon from "@mui/icons-material/PersonAddAlt1";
 import CancelIcon from "@mui/icons-material/Cancel";
 import styled from "@emotion/styled";
+import { Navigate } from "react-router-dom";
+import { greenColor } from "../customColors/ThemeAndColor";
+import page from "../images/landing-page.png";
+import LaunchIcon from "@mui/icons-material/Launch";
 
 const sideMenuItems = [
   { icon: <SignalCellularAltIcon />, title: "Dashboard" },
@@ -39,7 +42,7 @@ const ListItemStyle = styled("li")({
   width: "200px",
   borderRadius: "10px",
   color: "#fff",
-  "&:hover": { color: "green", backgroundColor: "#2c3955" },
+  "&:hover": { color: greenColor, backgroundColor: "#2c3955" },
 });
 
 export default function SideBar() {
@@ -50,6 +53,7 @@ export default function SideBar() {
         height: "95vh",
         backgroundColor: "#111827",
         padding: "10px",
+        color: "#fff",
       }}
     >
       <List>
@@ -85,7 +89,7 @@ export default function SideBar() {
             <ListItem key={item.title} disablePadding>
               <ListItemStyle>
                 <ListItemButton>
-                  <ListItemIcon sx={{ color: "#fff" }}>
+                  <ListItemIcon sx={{ color: "inherit" }}>
                     {item.icon}
                   </ListItemIcon>
                   <ListItemText primary={item.title} />
@@ -95,7 +99,22 @@ export default function SideBar() {
           );
         })}
       </List>
-      <Divider sx={{ borderColor: "gray" }} />
+      <Divider sx={{ borderColor: "gray", marginBottom: "10px" }} />
+      <Typography variant="h7">Need more features?</Typography>
+      <br />
+      <span style={{ fontSize: ".7rem", fontWeight: "lighter", color: "gray" }}>
+        Checkout our Pro solutions template.
+      </span>
+      <img src={page} height="160px" width="160px" />
+
+      <Button
+        variant="contained"
+        color="success"
+        sx={{ width: "90%", margin: "10px", padding: "8px 10px" }}
+      >
+        Pro live preview
+        <LaunchIcon />
+      </Button>
     </Box>
   );
 }
