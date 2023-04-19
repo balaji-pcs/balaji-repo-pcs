@@ -143,7 +143,7 @@ export default function Body() {
     </Box>
   );
 }
-
+// table for products data
 function Productdata() {
   return (
     <Box
@@ -190,7 +190,7 @@ function Productdata() {
     </Box>
   );
 }
-
+//  table for order data
 function Ordersdata() {
   return (
     <Box
@@ -236,6 +236,7 @@ function Ordersdata() {
                     <Typography variant="body2">{item.date}</Typography>
                   </TableCell>
                   <TableCell align="LEFT">
+                    {/* chip to determine the order status*/}
                     <Chip
                       label={item.status}
                       size="small"

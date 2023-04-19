@@ -23,7 +23,6 @@ import LockIcon from "@mui/icons-material/Lock";
 import PersonAddAlt1Icon from "@mui/icons-material/PersonAddAlt1";
 import CancelIcon from "@mui/icons-material/Cancel";
 import styled from "@emotion/styled";
-import { Navigate } from "react-router-dom";
 import { greenColor } from "../customColors/ThemeAndColor";
 import page from "../images/landing-page.png";
 import LaunchIcon from "@mui/icons-material/Launch";
@@ -57,6 +56,7 @@ export default function SideBar() {
       }}
     >
       <List>
+        {/* logo */}
         <ListItem>
           <img src={img} width="30px" height="30px" />
         </ListItem>
@@ -84,6 +84,7 @@ export default function SideBar() {
 
       <Divider sx={{ borderColor: "gray" }} />
       <List>
+        {/* menu */}
         {sideMenuItems?.map((item, index) => {
           return (
             <ListItem key={item.title} disablePadding>
