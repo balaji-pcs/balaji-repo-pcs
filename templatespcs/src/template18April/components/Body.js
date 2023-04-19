@@ -49,7 +49,7 @@ export default function Body() {
             justifyContent: "space-between",
 
             padding: "10px",
-            width: "21.3%",
+            width: "18.55vw",
           }}
         >
           <CardContent>
@@ -75,7 +75,7 @@ export default function Body() {
             alignItems: "center",
             justifyContent: "space-between",
             padding: "10px",
-            width: "21.3%",
+            width: "18.55vw",
           }}
         >
           <CardContent>
@@ -101,7 +101,7 @@ export default function Body() {
             alignItems: "center",
             justifyContent: "space-between",
             padding: "10px",
-            width: "21.3%",
+            width: "18.55vw",
           }}
         >
           <CardContent>
@@ -121,7 +121,7 @@ export default function Body() {
             alignItems: "center",
             justifyContent: "space-between",
             padding: "10px",
-            width: "21.3%",
+            width: "18.55vw",
           }}
         >
           <CardContent>
@@ -129,7 +129,6 @@ export default function Body() {
             <Typography variant="h5" sx={{ fontWeight: "300" }}>
               $23k
             </Typography>
-            <Typography variant="caption">BUDGET</Typography>
           </CardContent>
           <Avatar sx={{ bgcolor: "#5048e5" }}>
             <AttachMoneyOutlinedIcon />
@@ -148,12 +147,12 @@ function Productdata() {
   return (
     <Box
       sx={{
-        width: "312px",
-        height: "434px",
+        width: "22.5%",
+        height: "40%",
       }}
     >
       <TableContainer variant="outlined" component={Paper}>
-        <Typography sx={{ padding: "10px" }} variant="h6">
+        <Typography sx={{ padding: "10px 20px" }} variant="h6">
           Latest Products
         </Typography>
         <Table>
@@ -195,17 +194,17 @@ function Ordersdata() {
   return (
     <Box
       sx={{
-        width: "980px",
-        height: "434px",
+        width: "71%",
+        height: "40%",
       }}
     >
       <TableContainer variant="outlined" component={Paper}>
-        <Typography sx={{ padding: "10px" }} variant="h6">
+        <Typography sx={{ padding: "10px 20px" }} variant="h6">
           Latest Orders
         </Typography>
         <Table>
           <TableHead>
-            <TableRow>
+            <TableRow sx={{ bgcolor: "#d3d3d369" }}>
               <TableCell align="LEFT">
                 <Typography variant="overline">ORDER REF</Typography>
               </TableCell>
@@ -243,10 +242,10 @@ function Ordersdata() {
                       sx={{
                         bgcolor:
                           item.status === "DELEVERED"
-                            ? redColor
-                            : item.status === "PENDING"
                             ? tealColor
-                            : amberColor,
+                            : item.status === "PENDING"
+                            ? amberColor
+                            : redColor,
                         color: "#fff",
                       }}
                     />

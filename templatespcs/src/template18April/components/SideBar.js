@@ -49,7 +49,7 @@ export default function SideBar() {
     <Box
       sx={{
         minWidth: "13%",
-        height: "95vh",
+        height: "100vh",
         backgroundColor: "#111827",
         padding: "10px",
         color: "#fff",
@@ -83,7 +83,7 @@ export default function SideBar() {
       </List>
 
       <Divider sx={{ borderColor: "gray" }} />
-      <List>
+      <List sx={{ height: "50vh" }}>
         {/* menu */}
         {sideMenuItems?.map((item, index) => {
           return (
