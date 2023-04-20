@@ -1,18 +1,14 @@
-import SideBar from "./template18April/components/SideBar";
-import HeaderBar from "./template18April/components/HeaderBar";
-import Body from "./template18April/components/Body";
-import "./App.css";
 import { ThemeProvider } from "@mui/material";
-import { theme } from "./template18April/customColors/ThemeAndColor";
+
+import "./App.css";
+import AppNavigation from "./components/AppBar/AppNavigation";
+import Body from "./components/HirePageComp/Body";
 
 function App() {
   return (
     <div className="App">
-      <SideBar />
-      <div className="AppBar">
-        <HeaderBar />
-        <Body />
-      </div>
+      <AppNavigation />
+      <Body />
     </div>
   );
 }
