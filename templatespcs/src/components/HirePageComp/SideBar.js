@@ -64,7 +64,7 @@ export default function SideBar() {
     <Box
       sx={{
         width: "15vw",
-        height: "89vh",
+        height: "87vh",
         padding: "17px 10px",
         borderRight: "1px solid lightgray",
       }}

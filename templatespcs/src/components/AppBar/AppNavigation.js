@@ -72,7 +72,7 @@ const RoundButton1 = styled(Button)({
     '"Segoe UI Symbol"',
   ].join(","),
 });
-const RoundButton2 = styled(Button)({
+export const RoundButton2 = styled(Button)({
   borderRadius: "30px",
   marign: "0px 5px",
   paddingLeft: "15px",

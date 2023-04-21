@@ -7,7 +7,7 @@
   height:100%
 }
 .cards_div{
-  height: 80vh;
+  height: 79vh;
   padding:10px;
   display:flex;
   flex-wrap: wrap;
@@ -64,6 +64,10 @@
   align-items: center;
   justify-content: center;
 }
-/* {
+
+/* footer-Div */
+
+.footer-Div{
   display: flex;
-} */
+  align-items: center;
+}

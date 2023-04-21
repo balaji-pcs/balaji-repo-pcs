@@ -8,7 +8,7 @@ export default function Body() {
     <Box
       sx={{
         width: "99.9vw",
-        height: "92.9vh",
+        height: "90vh",
         display: "flex",
       }}
     >
